@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "melted",
+  "version": "${version}",
+  "name": "melted",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/31210/melted"
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/melted/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "org.aki.melted.MeltedClient"
+    ],
+    "main": [
+      "org.aki.melted.Melted"
+    ]
+  },
+  "mixins": [
+    "melted.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
