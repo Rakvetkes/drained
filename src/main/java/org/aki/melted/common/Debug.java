@@ -1,4 +1,4 @@
-package org.aki.melted;
+package org.aki.melted.common;
 
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
@@ -35,7 +35,7 @@ public class Debug {
     public static int getFluidLevel(CommandContext<ServerCommandSource> context) {
         BlockPos blockPos = BlockPosArgumentType.getBlockPos(context, "pos");
         FluidState fluidState = context.getSource().getWorld().getFluidState(blockPos);
-        if (PublicVars.STILL_MIXTURE.matchesType(fluidState.getFluid())) {
+        if (PublicVars.REFINED_WATER.refStill.matchesType(fluidState.getFluid())) {
             context.getSource().sendFeedback(() -> Text.literal(String.format("The level of the limited fluid at (%d,%d,%d) is %d",
                     blockPos.getX(), blockPos.getY(), blockPos.getZ(), fluidState.get(LimitedFluid.ACTUAL_LEVEL))), false);
         } else {

@@ -3,15 +3,15 @@ package org.aki.melted.limitedfluid;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidBlock;
-import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.state.StateManager;
 
 public class LimitedFluidBlock extends FluidBlock {
 
-    public LimitedFluidBlock(FlowableFluid fluid, Settings settings) {
+    public LimitedFluidBlock(LimitedFluid fluid, Settings settings) {
         super(fluid, settings);
-        setDefaultState(getDefaultState().with(LimitedFluid.ACTUAL_LEVEL, 0));
+        setDefaultState(getDefaultState().with(LEVEL, 15)
+                .with(LimitedFluid.ACTUAL_LEVEL, LimitedFluid.MAX_ACTUAL_LEVEL));
     }
 
     @Override
