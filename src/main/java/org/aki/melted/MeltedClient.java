@@ -12,7 +12,7 @@ public class MeltedClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        FluidRenderHandlerRegistry.INSTANCE.register(PublicVars.REFINED_WATER.refStill, PublicVars.REFINED_WATER.refFlowing,
+        FluidRenderHandlerRegistry.INSTANCE.register(PublicVars.REFINED_WATER,
                 SimpleFluidRenderHandler.coloredWater(0x00CCFF));
 
     }

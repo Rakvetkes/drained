@@ -9,7 +9,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import org.aki.melted.common.util.Pair;
-import org.aki.melted.refactoredfluid.FluidPackage;
 import org.aki.melted.refactoredfluid.RefactoredFluid;
 
 public class ReactorManager {
@@ -36,23 +35,6 @@ public class ReactorManager {
 
     public void register(Fluid fluid, Reactor reactor) {
         register(fluid, fluid, reactor);
-    }
-
-    public void register(FluidPackage<RefactoredFluid> fluidPackage, Fluid fluid, Reactor reactor) {
-        register(fluidPackage.refStill, fluid, reactor);
-        register(fluidPackage.refFlowing, fluid, reactor);
-    }
-
-    public void register(Fluid fluid, FluidPackage<RefactoredFluid> fluidPackage, Reactor reactor) {
-        register(fluid, fluidPackage.refStill, reactor);
-        register(fluid, fluidPackage.refFlowing, reactor);
-    }
-
-    public void register(FluidPackage<RefactoredFluid> fluidPackage1, FluidPackage<RefactoredFluid> fluidPackage2, Reactor reactor) {
-        register(fluidPackage1.refStill, fluidPackage2.refStill, reactor);
-        register(fluidPackage1.refStill, fluidPackage2.refFlowing, reactor);
-        register(fluidPackage1.refFlowing, fluidPackage2.refStill, reactor);
-        register(fluidPackage1.refFlowing, fluidPackage2.refFlowing, reactor);
     }
 
     public void registerExchangeable(Fluid fluid1, Fluid fluid2, Reactor reactor) {

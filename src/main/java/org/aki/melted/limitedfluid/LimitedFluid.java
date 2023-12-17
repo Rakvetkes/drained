@@ -1,5 +1,6 @@
 package org.aki.melted.limitedfluid;
 
+import com.sun.jna.platform.win32.OaIdl;
 import net.minecraft.block.BlockState;
 import net.minecraft.fluid.*;
 import net.minecraft.state.StateManager;
@@ -20,9 +21,9 @@ public abstract class LimitedFluid extends RefactoredFluid {
     public static final int MAX_ACTUAL_LEVEL = 80;
     public static final IntProperty ACTUAL_LEVEL = IntProperty.of("actual_level", 0, MAX_ACTUAL_LEVEL);
 
-    public LimitedFluid(boolean isFlowing) {
-        super(isFlowing);
-        setDefaultState(updateLevel(getDefaultState().with(ACTUAL_LEVEL, MAX_ACTUAL_LEVEL)));
+    public LimitedFluid() {
+        super();
+        setDefaultState(getDefaultState().with(ACTUAL_LEVEL, MAX_ACTUAL_LEVEL));
     }
 
     @Override
@@ -122,7 +123,7 @@ public abstract class LimitedFluid extends RefactoredFluid {
     @Override
     public float getHeight(FluidState state) {
         if (this.matchesType(state.getFluid())) {
-            return (float) state.get(ACTUAL_LEVEL) / (float) MAX_ACTUAL_LEVEL * (8.0f / 9.0f);
+            return (state.get(ACTUAL_LEVEL) / (float) MAX_ACTUAL_LEVEL);
         } else {
             return super.getHeight(state);
         }

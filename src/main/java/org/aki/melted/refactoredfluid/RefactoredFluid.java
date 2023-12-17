@@ -53,39 +53,30 @@ public abstract class RefactoredFluid extends FlowableFluid {
 
     /* Reserved features. Though I'm not willing to use them. */
 
-    private RefactoredFluid refStill, refFlowing;
-    private boolean isFlowing;
-
-    protected RefactoredFluid(boolean isFlowing) {
-        this.isFlowing = isFlowing;
+    protected RefactoredFluid() {
         setDefaultState(getDefaultState().with(LEVEL, 8));
         ReactorManager.INSTANCE.register(this, this::exchange);
         ReactorManager.INSTANCE.registerExchangeable(this, Fluids.EMPTY, this::exchange);
     }
 
-    public void copyReferences(FluidPackage<? extends RefactoredFluid> fluidPackage) {
-        refStill = fluidPackage.refStill;
-        refFlowing = fluidPackage.refFlowing;
-    }
-
     @Override
     public boolean matchesType(Fluid fluid) {
-        return fluid == getFlowing() || fluid == getStill();
+        return fluid.equals(this);
     }
 
     @Deprecated @Override
     public boolean isStill(FluidState state) {
-        return !isFlowing;
+        return true;
     }
 
     @Override
     public Fluid getStill() {
-        return refStill;
+        return this;
     }
 
     @Override
     public Fluid getFlowing() {
-        return refFlowing;
+        return this;
     }
 
     @Override
