@@ -44,11 +44,6 @@ public abstract class RefactoredFluid extends FlowableFluid {
         return super.getUpdatedState(world, pos, state);
     }
 
-    @Deprecated @Override
-    protected void tryFlow(World world, BlockPos pos, FluidState state) {
-        super.tryFlow(world, pos, state);
-    }
-
 
 
     /* Reserved features. Though I'm not willing to use them. */
@@ -95,7 +90,7 @@ public abstract class RefactoredFluid extends FlowableFluid {
     /* Rewritten and supporting methods. */
 
     @Override
-    public void onScheduledTick(World world, BlockPos pos, FluidState state) {
+    protected void tryFlow(World world, BlockPos pos, FluidState state) {
         BlockState blockState = world.getBlockState(pos);
         FluidState fluidState = blockState.getFluidState();
         for (Direction direction : Direction.values()) {
@@ -113,6 +108,11 @@ public abstract class RefactoredFluid extends FlowableFluid {
             world.scheduleFluidTick(pos, fluidState.getFluid(), getNextTickDelay(world, pos, state, fluidState));
             // world.updateNeighborsAlways(pos, currentState.getBlockState().getBlock());
         }
+    }
+
+    @Override
+    public void onScheduledTick(World world, BlockPos pos, FluidState state) {
+        this.tryFlow(world, pos, state);
     }
 
     protected void exchange(World world, BlockPos pos, BlockState state, FluidState fluidState, Direction direction, BlockState targetState, FluidState targetFluidState) {

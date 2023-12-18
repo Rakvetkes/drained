@@ -8,6 +8,7 @@ import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import org.aki.melted.common.reactor.ReactorManager;
@@ -21,8 +22,11 @@ public abstract class LimitedFluid extends RefactoredFluid {
     public static final int MAX_ACTUAL_LEVEL = 80;
     public static final IntProperty ACTUAL_LEVEL = IntProperty.of("actual_level", 0, MAX_ACTUAL_LEVEL);
 
+    private boolean coefficientFeatureKey;
+
     public LimitedFluid() {
         super();
+        coefficientFeatureKey = false;
         setDefaultState(getDefaultState().with(ACTUAL_LEVEL, MAX_ACTUAL_LEVEL));
     }
 
@@ -53,7 +57,7 @@ public abstract class LimitedFluid extends RefactoredFluid {
         BlockPos targetPos = pos.offset(direction);
         FluidState state = world.getFluidState(pos);
         FluidState targetState = world.getFluidState(targetPos);
-        float coefficient = this.getFlowPressure(world, pos, state, direction, targetState);
+        float coefficient = this.getCoefficient(world, pos, state, direction, targetState);
         state = changeIntoTheSameFluid(state);
         targetState = changeIntoTheSameFluid(targetState);
         Pair<FluidState, FluidState> res = exchange(state, targetState, coefficient, flag);
@@ -76,6 +80,26 @@ public abstract class LimitedFluid extends RefactoredFluid {
         FluidState newLeft = updateLevel(state.with(ACTUAL_LEVEL, level1 - flow));
         FluidState newRight = updateLevel(targetState.with(ACTUAL_LEVEL, level2 + flow));
         return new Pair<>(newLeft, newRight);
+    }
+
+    protected float getCoefficient(World world, BlockPos pos, FluidState state, Direction direction, FluidState targetState) {
+        if (coefficientFeatureKey) {
+            return 1.0f;
+        } else {
+            return getFlowPressure(world, pos, state, direction, targetState);
+        }
+    }
+
+    @Override
+    protected boolean hasRandomTicks() {
+        return true;
+    }
+
+    @Override
+    protected void onRandomTick(World world, BlockPos pos, FluidState state, Random random) {
+        coefficientFeatureKey = true;
+        this.tryFlow(world, pos, state);
+        coefficientFeatureKey = false;
     }
 
     /**

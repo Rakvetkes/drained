@@ -15,8 +15,8 @@ import org.aki.melted.limitedfluid.LimitedFluid;
 
 public class RefinedWater extends LimitedFluid {
 
-    public RefinedWater(/*boolean isFlowing*/) {
-        super(/*isFlowing*/);
+    public RefinedWater() {
+        super();
     }
 
 
