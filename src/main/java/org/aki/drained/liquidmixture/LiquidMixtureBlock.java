@@ -1,7 +1,7 @@
-package org.aki.melted.liquidmixture;
+package org.aki.drained.liquidmixture;
 
-import org.aki.melted.limitedfluid.LimitedFluid;
-import org.aki.melted.limitedfluid.LimitedFluidBlockWithEntity;
+import org.aki.drained.limitedfluid.LimitedFluid;
+import org.aki.drained.limitedfluid.LimitedFluidBlockWithEntity;
 
 public class LiquidMixtureBlock extends LimitedFluidBlockWithEntity {
 

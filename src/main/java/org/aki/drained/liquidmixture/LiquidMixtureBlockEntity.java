@@ -1,4 +1,4 @@
-package org.aki.melted.liquidmixture;
+package org.aki.drained.liquidmixture;
 
 import it.unimi.dsi.fastutil.objects.Object2IntLinkedOpenHashMap;
 import net.minecraft.block.BlockState;
@@ -8,7 +8,7 @@ import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
 import net.minecraft.util.math.BlockPos;
-import org.aki.melted.common.PublicVars;
+import org.aki.drained.common.PublicVars;
 import org.jetbrains.annotations.Nullable;
 
 public class LiquidMixtureBlockEntity extends BlockEntity {

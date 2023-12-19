@@ -1,4 +1,4 @@
-package org.aki.melted.refactoredfluid;
+package org.aki.drained.refactoredfluid;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -13,7 +13,7 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
-import org.aki.melted.common.reactor.ReactorManager;
+import org.aki.drained.common.reactor.ReactorManager;
 
 public abstract class RefactoredFluid extends FlowableFluid {
 

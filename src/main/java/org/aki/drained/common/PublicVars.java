@@ -1,13 +1,12 @@
-package org.aki.melted.common;
+package org.aki.drained.common;
 
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.item.BucketItem;
-import org.aki.melted.limitedfluid.LimitedFluidBlock;
-import org.aki.melted.liquidmixture.LiquidMixture;
-import org.aki.melted.liquidmixture.LiquidMixtureBlock;
-import org.aki.melted.liquidmixture.LiquidMixtureBlockEntity;
-import org.aki.melted.refinedwater.RefinedWater;
+import org.aki.drained.limitedfluid.LimitedFluidBlock;
+import org.aki.drained.liquidmixture.LiquidMixture;
+import org.aki.drained.liquidmixture.LiquidMixtureBlock;
+import org.aki.drained.liquidmixture.LiquidMixtureBlockEntity;
+import org.aki.drained.refinedwater.RefinedWater;
 
 public class PublicVars {
 

@@ -1,6 +1,5 @@
-package org.aki.melted.limitedfluid;
+package org.aki.drained.limitedfluid;
 
-import com.sun.jna.platform.win32.OaIdl;
 import net.minecraft.block.BlockState;
 import net.minecraft.fluid.*;
 import net.minecraft.state.StateManager;
@@ -11,9 +10,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
-import org.aki.melted.common.reactor.ReactorManager;
-import org.aki.melted.common.util.Pair;
-import org.aki.melted.refactoredfluid.RefactoredFluid;
+import org.aki.drained.common.util.Pair;
+import org.aki.drained.refactoredfluid.RefactoredFluid;
 
 public abstract class LimitedFluid extends RefactoredFluid {
 

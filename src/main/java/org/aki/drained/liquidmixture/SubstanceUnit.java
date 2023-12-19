@@ -1,4 +1,4 @@
-package org.aki.melted.liquidmixture;
+package org.aki.drained.liquidmixture;
 
 public abstract class SubstanceUnit {
 

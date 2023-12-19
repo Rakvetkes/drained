@@ -1,4 +1,4 @@
-package org.aki.melted.common.util;
+package org.aki.drained.common.util;
 
 public class Pair<A, B> {
 

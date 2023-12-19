@@ -1,4 +1,4 @@
-package org.aki.melted;
+package org.aki.drained;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -11,14 +11,14 @@ import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import org.aki.melted.common.Debug;
-import org.aki.melted.common.PublicVars;
-import org.aki.melted.common.reactor.ReactorManager;
-import org.aki.melted.limitedfluid.LimitedFluidBlock;
-import org.aki.melted.liquidmixture.LiquidMixture;
-import org.aki.melted.liquidmixture.LiquidMixtureBlock;
-import org.aki.melted.liquidmixture.LiquidMixtureBlockEntity;
-import org.aki.melted.refinedwater.RefinedWater;
+import org.aki.drained.common.Debug;
+import org.aki.drained.common.PublicVars;
+import org.aki.drained.common.reactor.ReactorManager;
+import org.aki.drained.limitedfluid.LimitedFluidBlock;
+import org.aki.drained.liquidmixture.LiquidMixture;
+import org.aki.drained.liquidmixture.LiquidMixtureBlock;
+import org.aki.drained.liquidmixture.LiquidMixtureBlockEntity;
+import org.aki.drained.refinedwater.RefinedWater;
 
 public class Melted implements ModInitializer {
 

@@ -1,4 +1,4 @@
-package org.aki.melted.common;
+package org.aki.drained.common;
 
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.context.CommandContext;
@@ -10,7 +10,7 @@ import net.minecraft.server.command.CommandManager;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
-import org.aki.melted.limitedfluid.LimitedFluid;
+import org.aki.drained.limitedfluid.LimitedFluid;
 
 public class Debug {
 

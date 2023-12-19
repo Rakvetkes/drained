@@ -1,4 +1,4 @@
-package org.aki.melted.liquidmixture;
+package org.aki.drained.liquidmixture;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectLinkedOpenHashMap;
 

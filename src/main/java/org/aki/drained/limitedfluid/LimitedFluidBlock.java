@@ -1,4 +1,4 @@
-package org.aki.melted.limitedfluid;
+package org.aki.drained.limitedfluid;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

@@ -1,4 +1,4 @@
-package org.aki.melted.common.reactor;
+package org.aki.drained.common.reactor;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;

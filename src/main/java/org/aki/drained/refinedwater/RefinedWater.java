@@ -1,4 +1,4 @@
-package org.aki.melted.refinedwater;
+package org.aki.drained.refinedwater;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -10,8 +10,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
-import org.aki.melted.common.PublicVars;
-import org.aki.melted.limitedfluid.LimitedFluid;
+import org.aki.drained.common.PublicVars;
+import org.aki.drained.limitedfluid.LimitedFluid;
 
 public class RefinedWater extends LimitedFluid {
 

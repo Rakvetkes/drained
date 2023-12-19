@@ -1,11 +1,9 @@
-package org.aki.melted.limitedfluid;
+package org.aki.drained.limitedfluid;
 
 import net.minecraft.block.BlockEntityProvider;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.util.math.BlockPos;
-import org.aki.melted.limitedfluid.LimitedFluid;
-import org.aki.melted.limitedfluid.LimitedFluidBlock;
 import org.jetbrains.annotations.Nullable;
 
 public class LimitedFluidBlockWithEntity extends LimitedFluidBlock implements BlockEntityProvider {
