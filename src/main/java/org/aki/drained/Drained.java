@@ -20,7 +20,7 @@ import org.aki.drained.liquidmixture.LiquidMixtureBlock;
 import org.aki.drained.liquidmixture.LiquidMixtureBlockEntity;
 import org.aki.drained.refinedwater.RefinedWater;
 
-public class Melted implements ModInitializer {
+public class Drained implements ModInitializer {
 
     @Override
     public void onInitialize() {

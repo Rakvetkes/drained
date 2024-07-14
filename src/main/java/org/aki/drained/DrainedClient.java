@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import org.aki.drained.common.PublicVars;
 
 @Environment(EnvType.CLIENT)
-public class MeltedClient implements ClientModInitializer {
+public class DrainedClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {

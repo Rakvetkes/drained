@@ -9,18 +9,18 @@
     "repo": "https://github.com/31210/melted"
   },
   "license": "All-Rights-Reserved",
-  "icon": "assets/melted/icon.png",
+  "icon": "assets/drained/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [
-      "org.aki.melted.MeltedClient"
+      "org.aki.drained.DrainedClient"
     ],
     "main": [
-      "org.aki.melted.Melted"
+      "org.aki.drained.Drained"
     ]
   },
   "mixins": [
-    "melted.mixins.json"
+    "drained.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=${loader_version}",
